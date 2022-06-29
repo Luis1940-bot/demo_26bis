@@ -9,6 +9,6 @@ const router = Router();
 // Configurar los routers
 // Ejemplo: router.use('/auth', authRouter);
 
-router.use("/marvel", personajes); // api/recipe/*
+router.use("/marvel", personajes); // api/marvel/*
 
 module.exports = router;
