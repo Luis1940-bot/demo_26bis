@@ -4,18 +4,22 @@ module.exports = (sequelize) => {
   sequelize.define("personajes", {
     name: {
       type: DataTypes.STRING,
-      allowNull: true,
+      allowNull: false,
     },
-    description: {
+    status: {
       type: DataTypes.STRING,
       allowNull: true,
     },
-    modified: {
+    created: {
       type: DataTypes.DATE,
       allowNull: true,
     },
     score: {
       type: DataTypes.INTEGER,
+      allowNull: true,
+    },
+    nickname: {
+      type: DataTypes.STRING,
       allowNull: true,
     },
   });
