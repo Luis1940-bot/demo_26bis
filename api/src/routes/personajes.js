@@ -26,6 +26,7 @@ router.get("/personajes/:id", async (req, res) => {
   try {
     //
     const { id } = req.params;
+
     const apiURL = await axios.get(
       `https://rickandmortyapi.com/api/character/${id}`
     );
@@ -36,4 +37,17 @@ router.get("/personajes/:id", async (req, res) => {
     res.send(error);
   }
 });
+
+router.post("/loadPersonajes", async (req, res) => {
+  try {
+    const { name, status, created, score, nickname } = req.body;
+    //validar
+    const personajes = await Personajes.bulkCreate(data);
+
+    res.json(personajes).status(422);
+  } catch (error) {
+    res.send(error).status(400);
+  }
+});
+
 module.exports = router;
